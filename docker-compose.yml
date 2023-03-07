@@ -12,3 +12,10 @@ services:
     restart: always
     ports:
       - 8080:8080
+  
+  java:
+    image: example/java
+    build: ./java
+    restart: always
+    ports:
+      - "127.0.0.1:8081:8080"
