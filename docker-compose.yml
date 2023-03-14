@@ -15,7 +15,19 @@ services:
   
   java:
     image: example/java
-    build: ./java
+    build: 
+      context: java
     restart: always
     ports:
       - "127.0.0.1:8081:8080"
+
+  typescript:
+    image: example/typescript
+    build:
+      context: 
+        ./typescript
+      args:
+        - APP_ENV=production
+    restart: always
+    ports:
+      - "127.0.0.1:8082:5050"
